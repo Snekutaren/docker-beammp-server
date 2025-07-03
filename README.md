@@ -24,7 +24,7 @@ Designed for everyone – from total beginners to experienced sysadmins.
 1. **Download and unpack the files**
 
 ```bash
-wget https://github.com/Snekutaren/docker-beammp-server/releases/latest/download/beammp-server.tar.gz
+curl -L https://github.com/Snekutaren/docker-beammp-server/releases/latest/download/beammp-server.tar.gz -o beammp-server.tar.gz
 tar -xzvf beammp-server.tar.gz
 ```
 
@@ -37,9 +37,10 @@ chmod +x prepare.sh
 
 3. **Adjust your settings**
 
-- Edit `docker-compose.yml`
+- Edit `docker-compose.yml` and..
 - Add your BeamMP auth key (get it here: [https://keymaster.beammp.com/login](https://keymaster.beammp.com/login))
 - Change map or other variables as needed (See Configuration below)
+- Type "id" in terminal to find uid/gid of current user
 
 4. **Start your server**
 
@@ -49,7 +50,7 @@ docker-compose up -d
 Or if you prefer to not use compose
 
 ```bash
-sudo docker run -it -d --name beammp-server \
+sudo docker run -it --init -d --name beammp-server \
     -p 30814:30814/tcp \
     -p 30814:30814/udp \
     -v ./beammp-server:/beamroot/beammp \
