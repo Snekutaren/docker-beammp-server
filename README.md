@@ -21,11 +21,11 @@ Designed for everyone – from total beginners to experienced sysadmins.
 
 ## 🚀 Getting started
 
-1. **Clone this repository**
+1. **Download files**
 
 ```bash
-git clone https://github.com/Snekutaren/docker-beammp-server.git
-cd docker-beammp-server
+wget https://github.com/Snekutaren/docker-beammp-server/releases/latest/download/beammp-server.tar.gz
+cd beammp-server
 ```
 
 2. **Run prepare.sh to set up folders and permissions**
