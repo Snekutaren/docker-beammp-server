@@ -23,7 +23,7 @@ Designed for everyone – from total beginners to experienced sysadmins.
 
 1. **Download and unpack the files**
 
-Navigate to folder where you want to run server 
+Navigate to folder where you want to run server, then.. 
 ```bash
 curl -L https://github.com/Snekutaren/docker-beammp-server/releases/latest/download/beammp-server.tar.gz -o beammp-server.tar.gz
 tar -xzvf beammp-server.tar.gz
