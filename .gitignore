@@ -1,0 +1,7 @@
+docker-compose.dev
+docker-compose.yml
+.env
+
+beammp-server/
+build_dev.sh
+build.sh

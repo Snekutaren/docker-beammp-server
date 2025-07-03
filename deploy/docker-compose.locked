@@ -1,0 +1,22 @@
+
+# IMPORTANT: Run ./prepare.sh before docker-compose up to set up folders and permissio
+
+services:
+  beammp-server:
+    image: snekutaren/beammp-server:latest
+    container_name: beammp-server
+    init: true
+    stdin_open: true
+    tty: true
+    environment:                             # Command "id" in terminal will tell you uid/gid of current user.
+      - HOST_UID=1000                        # Replace with your actual host UID.
+      - HOST_GID=1000                        # Replace with your actual host GID.
+      - BEAMMP_AUTH_KEY=                     # Your BeamMP auth key (get it from https://keymaster.beammp.com/login), preferably like this = "your-auth-key"
+      - MAP_NAME=gridmap_v2                  # See list of map names at https://github.com/Snekutaren/docker-beammp-server or in beammp/configs.
+      - TZ=Europe/Stockholm
+    ports:
+      - "30814:30814/tcp"
+      - "30814:30814/udp"
+    volumes:
+      - ./beammp-server:/beamroot/beammp     # mounted_folder_on_host:beammp_files_in_container
+    restart: unless-stopped
